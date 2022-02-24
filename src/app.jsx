@@ -2,6 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import './app.css';
 import NavBar from './components/navBar';
 import Videos from './components/videos';
+import { Router } from 'react-router-dom'
 
 function App() {
   const [videos, setVideos] = useState();
@@ -35,10 +36,10 @@ function App() {
   });
 
   return (
-    <div>
-      <NavBar handleSearch={handleSearch} />
-      <Videos videos={videos}/>
-    </div>
+      <div>
+        <NavBar handleSearch={handleSearch} />
+        <Videos videos={videos} />
+      </div>
   );
 }
 

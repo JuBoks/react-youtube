@@ -1,13 +1,15 @@
-import React, { Component } from 'react';
+import React from 'react';
+import { useParams, useLocation } from 'react-router-dom';
 
-class VideoPage extends Component {
-  render() {
-    return (
-      <div>
-        <h1>HELLO!!!</h1>
-      </div>
-    );
-  }
-}
+const VideoPage = () => {
+  const params = useParams();
+  const location = useLocation();
+  console.log(location.state)
+  return (
+    <div>
+      <h1>{params.videoId}</h1>
+    </div>
+  );
+};
 
 export default VideoPage;

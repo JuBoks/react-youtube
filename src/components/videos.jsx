@@ -7,7 +7,7 @@ class Videos extends PureComponent {
         <ul>
           {
             this.props.videos && this.props.videos.map(video => {
-              return <Video key={video.id} video={video} />
+              return <Video key={video.id} video={video } />
             })
           }
         </ul>
