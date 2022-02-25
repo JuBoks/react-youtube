@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import styles from './navBar.module.css'
 
 class NavBar extends Component {
   inputRef = React.createRef();
@@ -11,9 +12,9 @@ class NavBar extends Component {
   render() {
     return (
       <form>
-        <span>LOGO</span>
+        <span className={styles.logo}>YouTube</span>
         <input ref={this.inputRef} />
-        <button onClick={this.handleSearch}>Search</button>
+        <button onClick={this.handleSearch}></button>
       </form>
     );
   }

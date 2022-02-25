@@ -2,4 +2,38 @@ li {
   list-style: none;
   display: flex;
   align-items: center;
+  cursor: pointer;
+  box-shadow: 4px 5px 5px #dedede;
+  width: 520px;
+  border: 1px solid #dedede;
+  margin-left: 5px;
+  background-color: white;
+}
+
+li:hover {
+  transform:scale(1.05); 
+}
+
+img {
+  width: 250px;
+  padding: 3px;
+}
+
+.titleContainer {
+  padding: 0px 20px;
+}
+
+.title {
+  overflow: hidden;
+  text-size-adjust: auto;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  font-weight: 600;
+  font-family: Arial, sans-serif;
+}
+
+.channelTitle {
+  font-family: Arial, sans-serif;
+  margin-top: 10px;
 }

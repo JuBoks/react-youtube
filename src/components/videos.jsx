@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react';
 import Video from './video';
+import styles from './videos.module.css'
 
 class Videos extends PureComponent {
   render() {

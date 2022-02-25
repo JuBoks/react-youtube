@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
 import Videos from './videos';
+import styles from './videoPage.module.css';
 
 const VideoPage = () => {
   const params = useParams();
@@ -27,10 +28,10 @@ const VideoPage = () => {
   },[]);
 
   return (
-    <div>
+    <div className={styles.page}>
       <div>
-        <div>
-          <iframe width="1280" height="720" 
+        <div className={styles.videoWrapper}>
+          <iframe width="100%" height="100%" 
             src={`https://www.youtube.com/embed/${params.videoId}`}
             title="YouTube video player" 
             frameBorder="0" 
@@ -45,7 +46,6 @@ const VideoPage = () => {
       <div>
         <Videos videos={videos} />
       </div>
-      <h1>{params.videoId}</h1>
     </div>
   );
 };

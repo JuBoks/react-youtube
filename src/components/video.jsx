@@ -8,7 +8,7 @@ class Video extends Component {
     const video = this.props.video
     const snippet = video.snippet;
     const thumbnails = snippet.thumbnails.medium;
-    console.log(video)
+    console.log(snippet.thumbnails)
     return (
       <li>
         <Link to={`/pages/${video.id}`} state={{video}} key={video.id}>
@@ -17,9 +17,9 @@ class Video extends Component {
         {/* <a className='thumbnails' href={`https://youtu.be/${video.id}`}>
           <img src={thumbnails.url}></img>
         </a> */}
-        <div className='title-container'>
-          <div className='title'>{snippet.title}</div>
-          <div className='channel-title'>{snippet.channelTitle }</div>
+        <div className={styles.titleContainer}>
+          <div className={styles.title}>{snippet.title}</div>
+          <div className={styles.channelTitle}>{snippet.channelTitle }</div>
         </div>
       </li>
       
