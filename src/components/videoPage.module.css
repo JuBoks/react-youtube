@@ -1,16 +1,22 @@
 .page {
   width: 70%;
+  position: relative;
+}
+
+.videoContainer {
+  display: inline-block;
+  width: 70%;
 }
 
 .videoWrapper {
-  position: relative;
-  padding-bottom: 56.25%;
+  margin-top: 10px;
+}
+
+.listWrapper {
+  display: inline-block;
+  position: absolute;
 }
 
 iframe{
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  height: 700px;
 }

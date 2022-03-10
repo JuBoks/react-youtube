@@ -15,12 +15,15 @@ li:hover {
 }
 
 img {
+  display: block;
   width: 250px;
   padding: 3px;
 }
 
 .titleContainer {
   padding: 0px 20px;
+  display: block;
+  align-self: center;
 }
 
 .title {

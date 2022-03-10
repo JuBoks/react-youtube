@@ -11,16 +11,13 @@ class Video extends Component {
     console.log(snippet.thumbnails)
     return (
       <li>
-        <Link to={`/pages/${video.id}`} state={{video}} key={video.id}>
+        <Link to={`/pages/${video.id}`} state={{video}} key={video.id} style={{ color: 'black', textDecoration: 'none', display: 'flex'}}>
           <img src={thumbnails.url}></img>
+          <div className={styles.titleContainer}>
+            <div className={styles.title}>{snippet.title}</div>
+            <div className={styles.channelTitle}>{snippet.channelTitle }</div>
+          </div>
         </Link>
-        {/* <a className='thumbnails' href={`https://youtu.be/${video.id}`}>
-          <img src={thumbnails.url}></img>
-        </a> */}
-        <div className={styles.titleContainer}>
-          <div className={styles.title}>{snippet.title}</div>
-          <div className={styles.channelTitle}>{snippet.channelTitle }</div>
-        </div>
       </li>
       
     );
