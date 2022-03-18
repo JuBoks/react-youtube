@@ -5,16 +5,39 @@
 
 .videoContainer {
   display: inline-block;
-  width: 70%;
+  width: calc(100% - 475px);
+  position: relative;
+  height: 287vh;
 }
 
 .videoWrapper {
   margin-top: 10px;
+  position: sticky;
+  top: 0;
+  left: 0;
 }
 
 .listWrapper {
   display: inline-block;
   position: absolute;
+}
+
+.listWrapper li {
+  width: 100%;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.channelName {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.description {
+  font-size: 15px;
 }
 
 iframe{

@@ -9,7 +9,7 @@ const VideoPage = () => {
   const location = useLocation();
   const video = location.state.video.snippet;
   const [videos, setVideos] = useState();
-  console.log(video)
+
   const requestOptions = {
     method: 'GET',
     redirect: 'follow'
@@ -22,7 +22,7 @@ const VideoPage = () => {
     .then(result => {
       result = JSON.parse(result);
       const items = result && result.items ? result.items : [];
-      console.log(items);
+      console.log('it', items)
       setVideos(items);
     })
     .catch(error => console.log('error', error));
@@ -41,8 +41,9 @@ const VideoPage = () => {
             allowFullScreen />
         </div>
         <div>
-          <div>{video.title}</div>
-          {video.description}
+          <div className={styles.title}>{video.title}</div>
+          <div className={styles.channelName}>{video.channelTitle}</div>
+          <div className={styles.description}>{video.description}</div>
         </div>
       </div>
       <div className={styles.listWrapper}>

@@ -1,26 +1,24 @@
-import React, { Component } from 'react';
-import styles from './navBar.module.css';
+import React, { memo, useCallback, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import styles from './navBar.module.css';
 
-class NavBar extends Component {
-  inputRef = React.createRef();
+const NavBar = memo( props => {
+  const inputRef = useRef();
 
-  handleSearch = (evt) => {
+  const handleSearch = useCallback((evt) => {
     evt.preventDefault();
-    this.props.handleSearch(this.inputRef.current.value);
-  }
+    props.handleSearch(inputRef.current.value);
+  });
 
-  render() {
-    return (
-      <form>
-        <Link to={'/'}>
-          <span className={styles.logo}>YouTube</span>
-        </Link>
-        <input ref={this.inputRef} />
-        <button onClick={this.handleSearch}></button>
-      </form>
-    );
-  }
-}
+  return (
+    <form>
+      <Link to={'/'}>
+        <span className={styles.logo}>YouTube</span>
+      </Link>
+      <input ref={inputRef} />
+      <button onClick={handleSearch}></button>
+    </form>
+  );
+});
 
 export default NavBar;

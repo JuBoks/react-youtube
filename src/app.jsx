@@ -26,7 +26,6 @@ function App() {
     fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&regionCode=KR&q=${value}&maxResults=25&key=${process.env.REACT_APP_API_KEY}`, requestOptions)
     .then(response => response.text())
     .then(result => {
-      console.log("검색", result);
       result = JSON.parse(result);
       const items = result && result.items ? result.items : [];
       setVideos(items);

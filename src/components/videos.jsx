@@ -1,19 +1,17 @@
-import React, { PureComponent } from 'react';
+import React, { memo } from 'react';
 import Video from './video';
 import styles from './videos.module.css'
 
-class Videos extends PureComponent {
-  render() {
-    return (
-        <ul>
-          {
-            this.props.videos && this.props.videos.map(video => {
-              return <Video key={video.id} video={video } />
-            })
-          }
-        </ul>
-    );
-  }
-}
+const Videos = memo(props => {
+  return (
+    <ul>
+      {
+        props.videos && props.videos.map(video => {
+          return <Video key={video.id} video={video } />
+        })
+      }
+    </ul>
+);
+});
 
 export default Videos;
