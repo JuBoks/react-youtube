@@ -1,0 +1,28 @@
+li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  border: 1px solid lightgray;
+  width: calc(50% - 5px);
+  transition: transform 0.5s ease;
+  cursor: pointer;
+}
+
+li:hover {
+  transform: scale(1.02);
+}
+
+.thumbnails {
+  width: 40%;
+}
+.titleContainer {
+  padding: 5px;
+}
+
+.title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-size-adjust: auto;
+  overflow: hidden;
+}

@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import styles from './app.module.css';
-import NavBar from './components/navBar';
-import Videos from './components/videos';
+import NavBar from './components/navBar/navBar';
+import Videos from './components/video_list/videos';
 
 function App() {
   const [videos, setVideos] = useState();

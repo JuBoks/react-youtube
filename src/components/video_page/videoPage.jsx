@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useLocation } from 'react-router-dom';
-import Videos from './videos';
 import styles from './videoPage.module.css';
-import NavBar from './navBar';
+import NavBar from '../navBar/navBar';
+import Videos from '../video_list/videos';
+
 
 const VideoPage = () => {
   const params = useParams();

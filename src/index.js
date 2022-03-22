@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './app';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import VideoPage from './components/videoPage';
+import VideoPage from './components/video_page/videoPage';
 
 ReactDOM.render(
   <React.StrictMode>

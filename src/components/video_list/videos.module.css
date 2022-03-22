@@ -1,6 +1,6 @@
 ul {
-  padding: 0;
   display: flex;
   flex-wrap: wrap;
-  margin-top: 6px;
+  padding: 0;
+  gap: 5px 10px;
 }
