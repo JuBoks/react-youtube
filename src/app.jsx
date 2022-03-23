@@ -3,31 +3,22 @@ import styles from './app.module.css';
 import NavBar from './components/navBar/navBar';
 import Videos from './components/video_list/videos';
 
-function App() {
+function App({youtube}) {
   const [videos, setVideos] = useState();
   const requestOptions = {
     method: 'GET',
     redirect: 'follow'
   };
-  
+
   useEffect(() => {
-    fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&regionCode=KR&maxResults=25&key=${process.env.REACT_APP_API_KEY}`, requestOptions)
-    .then(response => response.json())
-    .then(result => result.items)
-    .then(items => setVideos(items))
-    .catch(error => console.log('error', error));
+    youtube.getMostPopular()
+    .then(items => setVideos(items));
   }, []);
 
   
   const handleSearch = useCallback((value) => {
-    fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&type=video&regionCode=KR&q=${value}&maxResults=25&key=${process.env.REACT_APP_API_KEY}`, requestOptions)
-    .then(response => response.json())
-    .then(result => result.items.map(item => (
-      {...item, id: item.id.videoId}
-      ))
-    )
-    .then(items => { setVideos(items); })
-    .catch(error => console.log('error', error));
+    youtube.search(value)
+    .then(items => setVideos(items));
   });
 
   return (
