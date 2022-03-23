@@ -3,7 +3,7 @@ import styles from './video.module.css';
 import { Link } from 'react-router-dom';
 
 const Video = memo( ({video: {id, snippet}}) => {
-  console.log('props', id)
+  // console.log('props', id)
   // const video = props.video;
   // const videoId = video.id.kind ? video.id.videoId : video.id;
   // const snippet = video.snippet;

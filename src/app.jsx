@@ -12,24 +12,21 @@ function App() {
   
   useEffect(() => {
     fetch(`https://youtube.googleapis.com/youtube/v3/videos?part=snippet&chart=mostPopular&regionCode=KR&maxResults=25&key=${process.env.REACT_APP_API_KEY}`, requestOptions)
-    .then(response => response.text())
-    .then(result => {
-      result = JSON.parse(result);
-      const items = result && result.items ? result.items : [];
-      setVideos(items);
-    })
+    .then(response => response.json())
+    .then(result => result.items)
+    .then(items => setVideos(items))
     .catch(error => console.log('error', error));
   }, []);
 
   
   const handleSearch = useCallback((value) => {
-    fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&regionCode=KR&q=${value}&maxResults=25&key=${process.env.REACT_APP_API_KEY}`, requestOptions)
-    .then(response => response.text())
-    .then(result => {
-      result = JSON.parse(result);
-      const items = result && result.items ? result.items : [];
-      setVideos(items);
-    })
+    fetch(`https://youtube.googleapis.com/youtube/v3/search?part=snippet&type=video&regionCode=KR&q=${value}&maxResults=25&key=${process.env.REACT_APP_API_KEY}`, requestOptions)
+    .then(response => response.json())
+    .then(result => result.items.map(item => (
+      {...item, id: item.id.videoId}
+      ))
+    )
+    .then(items => { setVideos(items); })
     .catch(error => console.log('error', error));
   });
 
