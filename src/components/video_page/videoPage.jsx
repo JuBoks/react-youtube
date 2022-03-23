@@ -34,21 +34,23 @@ const VideoPage = () => {
       <NavBar />
       <div className={styles.videoContainer}>
         <div className={styles.videoWrapper}>
-          <iframe width="100%" height="100%" 
-            src={`https://www.youtube.com/embed/${params.videoId}`}
-            title="YouTube video player" 
-            frameBorder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowFullScreen />
+          <div className={styles.video}>
+            <iframe width="100%" height="100%" 
+              src={`https://www.youtube.com/embed/${params.videoId}`}
+              title="YouTube video player" 
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+              allowFullScreen />
+          </div>
+          <div className={styles.description}>
+            <div className={styles.title}>{video.title}</div>
+            <div className={styles.channelName}>{video.channelTitle}</div>
+            <div className={styles.description}>{video.description}</div>
+          </div>
         </div>
-        <div>
-          <div className={styles.title}>{video.title}</div>
-          <div className={styles.channelName}>{video.channelTitle}</div>
-          <div className={styles.description}>{video.description}</div>
+        <div className={styles.listWrapper}>
+          <Videos videos={videos} />
         </div>
-      </div>
-      <div className={styles.listWrapper}>
-        <Videos videos={videos} />
       </div>
     </div>
   );

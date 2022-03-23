@@ -1,27 +1,33 @@
 .page {
   width: 70%;
-  position: relative;
+  height: auto;
 }
 
 .videoContainer {
-  display: inline-block;
-  width: calc(100% - 475px);
-  position: relative;
-  height: 287vh;
+  display: flex;
 }
 
 .videoWrapper {
-  margin-top: 10px;
+  width: 70%;
+  height: 100vh;
+  margin-top: 5px;
+}
+
+.video {
+  height: 40%;
   position: sticky;
   top: 0;
   left: 0;
 }
 
 .listWrapper {
-  display: inline-block;
-  position: absolute;
+  width: 30%;
+  height: 100vh;
 }
 
+.listWrapper ul {
+  margin: 5px;
+}
 .listWrapper li {
   width: 100%;
 }
@@ -38,8 +44,4 @@
 
 .description {
   font-size: 15px;
-}
-
-iframe{
-  height: 700px;
 }
