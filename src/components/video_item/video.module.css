@@ -3,7 +3,6 @@ li {
   display: flex;
   align-items: center;
   border: 1px solid lightgray;
-  width: calc(50% - 5px);
   transition: transform 0.5s ease;
   cursor: pointer;
   box-shadow: 2px 1px 3px 1px rgba(84,84,84,0.23);
@@ -14,6 +13,7 @@ li:hover {
 }
 
 .thumbnails {
+  align-self: stretch;
   width: 40%;
 }
 .titleContainer {
@@ -27,4 +27,16 @@ li:hover {
   -webkit-box-orient: vertical;
   text-size-adjust: auto;
   overflow: hidden;
+}
+
+.list {
+  width: 100%;
+}
+
+.list div {
+  font-size: 0.9em;
+}
+
+.grid {
+  width: calc(50% - 5px);
 }

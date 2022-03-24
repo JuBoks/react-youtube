@@ -1,0 +1,47 @@
+.page {
+  width: 70%;
+  height: auto;
+}
+
+.videoContainer {
+  display: flex;
+}
+
+.videoWrapper {
+  width: 70%;
+  height: 100vh;
+  margin-top: 5px;
+}
+
+.video {
+  height: 40%;
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
+.listWrapper {
+  width: 30%;
+  height: 100vh;
+}
+
+.listWrapper ul {
+  margin: 5px;
+}
+.listWrapper li {
+  width: 100%;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.channelName {
+  font-size: 24px;
+  font-weight: 500;
+}
+
+.description {
+  font-size: 15px;
+}
