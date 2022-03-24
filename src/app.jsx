@@ -15,8 +15,7 @@ function App({youtube}) {
   })
 
   useEffect(() => {
-    youtube.getMostPopular()
-    .then(items => setVideos(items));
+    getMostPopularVideos();
   }, []);
 
   const loadingOn = () => {
@@ -26,6 +25,16 @@ function App({youtube}) {
   const loadingOff = () => {
     setLoading(null);
   };
+
+  const getMostPopularVideos = useCallback(() => {
+    loadingOn();
+    selectVideo(null);
+    youtube.getMostPopular()
+      .then(items => {
+        setVideos(items);
+        loadingOff();
+      });
+  });
 
   const handleSearch = useCallback((value) => {
     // 로딩
@@ -41,7 +50,7 @@ function App({youtube}) {
 
   return (
       <div className={styles.mainContainer} >
-        <NavBar handleSearch={handleSearch} onClickLogo={selectVideo} />
+        <NavBar handleSearch={handleSearch} onClickLogo={getMostPopularVideos} />
         {
           loading &&
           <div className={styles.loadingBackground}> 

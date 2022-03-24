@@ -19,7 +19,7 @@ const NavBar = memo(({handleSearch, onClickLogo}) => {
     <header className={styles.header}>
       <div className={styles.logoContainer}>
         {/* <Link to={'/'}> */}
-            <span className={styles.logo} onClick={() => {onClickLogo(null);}}>YouTube</span>
+            <span className={styles.logo} onClick={() => {onClickLogo()}}>YouTube</span>
         {/* </Link> */}
       </div>
       <input ref={inputRef} type="search" onKeyUp={onKeyUp} placeholder="Search..."/>
