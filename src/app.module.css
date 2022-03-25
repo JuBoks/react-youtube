@@ -37,3 +37,14 @@
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+@media screen and (max-width: 46rem) {
+  .mainContainer {
+    width: 100%;
+    padding: 0 0.5rem;
+  }
+
+  .content {
+    flex-direction: column;
+  }
+}

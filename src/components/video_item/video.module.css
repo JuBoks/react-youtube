@@ -40,3 +40,9 @@ li:hover {
 .grid {
   width: calc(50% - 5px);
 }
+
+@media screen and (max-width: 46rem) {
+  .grid {
+    width: 100%;
+  }
+}
