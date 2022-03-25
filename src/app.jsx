@@ -12,19 +12,15 @@ function App({youtube}) {
 
   const selectVideo = useCallback((video) => {
     setSelectedVideo(video);
-  })
+  }, [])
 
-  useEffect(() => {
-    getMostPopularVideos();
+  const loadingOn = useCallback(() => {
+    setLoading(true);
   }, []);
 
-  const loadingOn = () => {
-    setLoading(true);
-  };
-
-  const loadingOff = () => {
+  const loadingOff = useCallback(() => {
     setLoading(null);
-  };
+  }, []);
 
   const getMostPopularVideos = useCallback(() => {
     loadingOn();
@@ -34,10 +30,13 @@ function App({youtube}) {
         setVideos(items);
         loadingOff();
       });
-  });
+  }, []);
+
+  useEffect(() => {
+    getMostPopularVideos();
+  }, []);
 
   const handleSearch = useCallback((value) => {
-    // 로딩
     loadingOn();
     selectVideo(null);
     youtube.search(value)
@@ -46,7 +45,7 @@ function App({youtube}) {
         loadingOff();
       })
       .catch(error => console.log);
-  });
+  }, []);
 
   return (
       <div className={styles.mainContainer} >

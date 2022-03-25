@@ -1,7 +1,7 @@
-import React from 'react';
+import {React, memo} from 'react';
 import styles from './videoPage.module.css'
 
-const VideoPage = ({video, video: {snippet}}) => {
+const VideoPage = memo(({video, video: {snippet}}) => {
   return (
     <section className={styles.page}>
       <iframe width="100%" height="500px" 
@@ -14,6 +14,6 @@ const VideoPage = ({video, video: {snippet}}) => {
       <h1 className={styles.channelTitle}>{snippet.channelTitle}</h1>
       <pre className={styles.description}>{snippet.description}</pre>
     </section>
-)};
+)});
 
 export default VideoPage;

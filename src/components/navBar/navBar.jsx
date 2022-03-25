@@ -5,15 +5,11 @@ import styles from './navBar.module.css';
 const NavBar = memo(({handleSearch, onClickLogo}) => {
   const inputRef = useRef();
 
-  const onClick = useCallback((evt) => {
-    handleSearch(inputRef.current.value);
-  });
-
-  const onKeyUp = useCallback((evt) => {
+  const onKeyUp = (evt) => {
     if (evt.key === 'Enter') {
       handleSearch(inputRef.current.value);
     }
-  });
+  };
 
   return (
     <header className={styles.header}>
@@ -23,7 +19,7 @@ const NavBar = memo(({handleSearch, onClickLogo}) => {
         {/* </Link> */}
       </div>
       <input ref={inputRef} type="search" onKeyUp={onKeyUp} placeholder="Search..."/>
-      <button onClick={onClick}></button>
+      <button onClick={() => handleSearch(inputRef.current.value)}></button>
     </header>
   );
 });

@@ -5,8 +5,15 @@ import App from './app';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import VideoPage from './components/video_page_link/videoPage';
 import Youtube from './service/youtube';
+import axios from 'axios';
 
-const youtube = new Youtube(process.env.REACT_APP_API_KEY);
+const httpClient = axios.create({
+  baseURL: "https://youtube.googleapis.com/youtube/v3",
+  params : {
+    key: process.env.REACT_APP_API_KEY
+  }
+});
+const youtube = new Youtube(httpClient);
 
 ReactDOM.render(
   <React.StrictMode>
